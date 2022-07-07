@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>О нас</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'main/styles/style.css' %}" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <img
+          src="{% static 'main/images/cloud.png' %}"
+          alt=""
+          class="navbar__image"
+        />
+        <p class="navbar__logo-text">Погода</p>
+      </div>
+      <ul class="navbar__links">
+        <li class="navbar__li">
+          <a href="{% url 'home' %}" class="navbar__link">Главная</a>
+        </li>
+        <li class="navbar__li">
+          <a href="{% url 'about' %}" class="navbar__link">О нас</a>
+        </li>
+        <li class="navbar__li">
+          <a href="{% url 'weather' %}" class="navbar__link">Погода</a>
+        </li>
+        <li class="navbar__li">
+          <a href="{% url 'new' %}" class="navbar__link">Новая запись</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="main-section main-section_about">
+      <h1 class="main-section__heading main-section__heading_about">О нас</h1>
+      <div class="main-section__card-container">
+        <div class="main-section__card card">
+          <h2 class="card__heading">Температура</h2>
+          <p class="card__text">
+            Актуальные данные по темературе в градусах Цельсия
+          </p>
+          <p class="card__content">+28°С</p>
+          <img
+            src="{% static 'main/images/temp.png' %}"
+            alt=""
+            class="card__image"
+          />
+        </div>
+        <div class="main-section__card card">
+          <h2 class="card__heading">Скорость ветра</h2>
+          <p class="card__text">
+            Новое оборудование для измерения скорости ветра
+          </p>
+          <p class="card__content">10 м/с</p>
+          <img
+            src="{% static 'main/images/wind.png' %}"
+            alt=""
+            class="card__image"
+          />
+        </div>
+        <div class="main-section__card card">
+          <h2 class="card__heading">Влажность воздуха</h2>
+          <p class="card__text">
+            Содержание воды в воздухе, измеряется в процентах
+          </p>
+          <p class="card__content">83%</p>
+          <img
+            src="{% static 'main/images/drop.png' %}"
+            alt=""
+            class="card__image"
+          />
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

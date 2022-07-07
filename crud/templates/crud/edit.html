@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'crud/styles/style.css' %}" />
+  </head>
+
+  <body>
+    <nav class="navbar container-fliud">
+      <div class="navbar__logo">
+        <img
+          src="{% static 'crud/images/cloud.png' %}"
+          alt=""
+          class="navbar__image"
+        />
+        <p class="navbar__logo-text">Погода</p>
+      </div>
+      <ul class="navbar__links">
+        <li class="navbar__li">
+          <a href="{% url 'home' %}" class="navbar__link">Главная</a>
+        </li>
+        <li class="navbar__li">
+          <a href="{% url 'about' %}" class="navbar__link">О нас</a>
+        </li>
+        <li class="navbar__li">
+          <a href="{% url 'weather' %}" class="navbar__link">Погода</a>
+        </li>
+        <li class="navbar__li">
+          <a href="{% url 'new' %}" class="navbar__link">Новая запись</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="edit-section">
+      <h1 class="edit-section__heading">Изменить запись</h1>
+      <form method="post" class="add-section__form form">
+        {% csrf_token %}
+        <label for="city" class="form__label">Ваш город</label>
+        {{form.city}}
+        <label for="date" class="form__label">Дата</label>
+        {{form.date}}
+        <label for="temp" class="form__label">Температура(°С)</label>
+        {{form.temperature}}
+        <label for="humidity" class="form__label">Влажность воздуха(%)</label>
+        {{form.humidity}}
+        <label for="windspeed" class="form__label">Скорость ветра(м/с)</label>
+        {{form.windspeed}}
+        <button type="submit" class="form__btn btn btn-primary">
+          Отправить
+        </button>
+      </form>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
